@@ -1,0 +1,16 @@
+.container {
+   
+    height: 600px;
+    margin-top: 0px;
+}
+
+.header{
+    background-color: cadetblue;
+    height: 50px;
+}
+
+.footer{
+    background-color:tomato;
+    height: 100px;
+    margin-top: 480px;
+}
