@@ -41,12 +41,12 @@ const {
                     <div className='pass'>Forget Password?</div>
                     {hasAccount ? (
                         <>
-                         <button  onClick={handleLogin}>Login</button>
+                         <button  className="btn1" onClick={handleLogin}>Login</button>
                          <p className='cursor'>Don't have an account ? <span onClick={() => setHasAccount(!hasAccount)}>sign up</span></p>
                         </>
                     ):(
                         <>
-                        <button  onClick={handleSignup} >SignUp</button>
+                        <button  className="btn1" onClick={handleSignup} >SignUp</button>
                         <p className='cursor'>Have an account ? <span onClick={() => setHasAccount(!hasAccount)}>sign in</span></p>
                        </>
                     )}
