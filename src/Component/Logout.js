@@ -1,23 +1,12 @@
-import React,{useState} from 'react'
-import LandingPage from './LandingPage';
-import './Registration.css';
+import React from 'react'
 
-const Logout = () => {
-const [redirect, setRedirect] = useState(true);
-
-    function handleClick(){
-        console.log("inside handleClick")
-       setRedirect(false);
-    }
+const Logout = ({handleLogout}) => {
 
     return (
         <>
-        {redirect ?
-        <div>
-        <h3>You have Sucessfully Logout</h3>
-        <p onClick={handleClick} className='cursor'>Please click to Redirect on LandingPage</p>
-        </div>:
-            <LandingPage/>}
+       
+            <h3>Welcome</h3>
+            <button type="button" className='primary' onClick={handleLogout} style={{width: "20%"}}>Logout</button>
         </>
     );
 }
