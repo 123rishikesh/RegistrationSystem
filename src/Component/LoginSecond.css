@@ -125,3 +125,7 @@ button:hover {
 .cursor{
     cursor: pointer;
 }
+
+h1{
+    padding-top: 50px;
+}
