@@ -2,7 +2,9 @@ import React from 'react'
 import './Logout.css';
 import { Dropdown } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import EditProfile from './EditProfile'
+import Layout from '../Component/Layout';
+import Header from '../Component/Header';
+import Footer from '../Component/Footer';
 
 const Logout = (props) => {
     const { handleLogout } = props;
@@ -21,7 +23,7 @@ const Logout = (props) => {
 
     return (
         <>
-
+            <Header/>
             <h3>Welcome</h3>
 
             <Dropdown className="drp">
@@ -36,9 +38,9 @@ const Logout = (props) => {
                     <Dropdown.Item  onClick={handleClick3}>UpdatePassword</Dropdown.Item>
                 </Dropdown.Menu>
             </Dropdown>
-
-
-
+             <div className='temp'>
+          <Footer/>
+          </div>
         </>
     );
 }

@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import './EditProfile.css';
 
 const EditProfile = (props) => {
 
@@ -6,8 +7,8 @@ const EditProfile = (props) => {
 
 
     return (
-            <>
-                  <div className='container-fluid'>
+           
+                  <div className='container-fluid' >
                         <div className='container'>
                             <h3>Edit Profile</h3>
                             <div className='text_field'>
@@ -23,11 +24,11 @@ const EditProfile = (props) => {
                                 <label>Phone</label><br />
                                 <input type="number" placeholder="please Enter PhoneNumber" name="phone" value={phone} onChange={(e) => {setState({...state,[e.target.name]: e.target.value})}} />
                             </div>
-                            <button className='btn-primary' onClick={editProfile} >EditProfile</button>
+                            <button className='btn btn-primary' onClick={editProfile} >EditProfile</button>
                         </div>
 
                     </div>
-            </>
+           
     );
 }
 

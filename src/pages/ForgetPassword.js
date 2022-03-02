@@ -8,11 +8,11 @@ const ForgetPassword = (props) => {
         <div className='mainContainer'>
         <div className='secondaryContainer'>
             <div className='fields'>
-            <h4>reset Password</h4>
+            <h4>Reset your password</h4>
         <label>Email</label><br/>
         <input type="email" value={email} onChange={(e) => {setEmail(e.target.value) }}/>
             </div>
-        <button  className="btn-primary" onClick={forgetPassword}>ResetPassword</button>
+        <button  className="btn btn-primary" onClick={forgetPassword}>ResetPassword</button>
         </div>
     </div>
 

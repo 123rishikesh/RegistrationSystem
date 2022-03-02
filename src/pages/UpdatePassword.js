@@ -13,7 +13,7 @@ const {password,state,setState,changePassword} = props;
                 <label>New Password</label><br/>
                 <input type="Password" name="password" value={password} onChange={(e) => {setState({...state, password:e.target.value}) }}/>
             </div>
-            <button className='btn-primary' onClick={changePassword}>UpdatePassword</button>
+            <button className='btn btn-primary' onClick={changePassword}>UpdatePassword</button>
             </div>
         </div>
     );

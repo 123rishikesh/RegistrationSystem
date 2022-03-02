@@ -14,7 +14,7 @@ const UpdateEmail = (props) => {
             <label>New Email</label><br/>
             <input type="text" name="email" value={email} onChange={(e) => {setState({...state, email:e.target.value}) }}/>
                 </div>
-            <button  className="btn-primary" onClick={changeEmail}>UpdateEmail</button>
+            <button  className="btn btn-primary" onClick={changeEmail}>UpdateEmail</button>
             </div>
         </div>
 

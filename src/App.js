@@ -2,20 +2,21 @@
 import './App.css';
 import app from './fire';
 import React, { useState, useEffect } from 'react';
-import LoginSecond from './Component/LoginSecond';
-import Logout from './Component/Logout';
-import NotFound from './Component/NotFound';
+import Home from './Component/Header';
+import LoginSecond from './pages/LoginSecond';
+import Logout from './pages/Logout';
+import NotFound from './pages/NotFound';
 import { getAuth, updateProfile, updatePhoneNumber, updateEmail, updatePassword, sendPasswordResetEmail } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
-import EditProfile from './Component/EditProfile';
+import EditProfile from './pages/EditProfile';
 import {
-  BrowserRouter,
   Routes,
   Route
 } from "react-router-dom";
-import UpdateEmail from './Component/UpdateEmail';
-import UpdatePassword from './Component/UpdatePassword';
-import ForgetPassword from './Component/ForgetPassword';
+import UpdateEmail from './pages/UpdateEmail';
+import UpdatePassword from './pages/UpdatePassword';
+import ForgetPassword from './pages/ForgetPassword';
+import Footer from './Component/Footer';
 
 function App() {
   const [state, setState] = useState({ name: " ", phone: " ", email: " ", password: " ", emailError: " ", passwordError: " ", hasAccount: " ", });
@@ -177,7 +178,7 @@ sendPasswordResetEmail(auth,email)
   return (
 
     <div className="App">
-
+    
       <Routes>
         <Route path="/EditProfile" element={
           <EditProfile
@@ -218,7 +219,7 @@ sendPasswordResetEmail(auth,email)
         <Route path="/UpdatePassword" element={<UpdatePassword changePassword={changePassword} password={state.password} setState={setState} />} />
         <Route path="/ForgetPassword" element={<ForgetPassword forgetPassword={forgetPassword} email={email} setEmail={setEmail}  />} />
       </Routes>
-
+        
     </div>
   );
 }

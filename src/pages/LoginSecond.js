@@ -6,18 +6,6 @@ import { Link } from 'react-router-dom';
 
 const LoginSecond = (props) => {
 
-// const {
-//     email,
-//     setEmail,
-//     password,
-//     setPassword,
-//     handleLogin,
-//     handleSignup,
-//     hasAccount,
-//     setHasAccount,
-//     emailError,
-//     passwordError,
-// } = props;
 
 const {
     email,
