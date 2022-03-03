@@ -8,23 +8,27 @@ const EditProfile = (props) => {
 
     return (
            
-                  <div className='container-fluid' >
+                  <div className='root' >
                         <div className='container'>
                             <h3>Edit Profile</h3>
-                            <div className='text_field'>
+                            {/* <form> */}
+                            <div className='form-group row'>
+                            <div className=' w-50'>
                                 <label>Name</label><br />
-                                <input type="text" placeholder="please Enter Name" name="name" value={name} onChange={(e) => {setState({...state,[e.target.name]: e.target.value})}} />
+                                <input type="text" className="form-control" placeholder="please Enter Name" name="name" value={name} onChange={(e) => {setState({...state,[e.target.name]: e.target.value})}} />
                             </div>
-                            <div className='text_field'>
+                            <div className='w-50'>
                                 <label>Email</label><br />
-                                <input type="email"  value="rishi@gmail.com"  readonly/>
+                                <input type="email" className="form-control" value="rishi@gmail.com"  readonly/>
                             </div>
                           
-                            <div className='text_field'>
+                            <div className='w-50'>
                                 <label>Phone</label><br />
-                                <input type="number" placeholder="please Enter PhoneNumber" name="phone" value={phone} onChange={(e) => {setState({...state,[e.target.name]: e.target.value})}} />
+                                <input type="number" className="form-control" placeholder="please Enter PhoneNumber" name="phone" value={phone} onChange={(e) => {setState({...state,[e.target.name]: e.target.value})}} />
+                            </div>
                             </div>
                             <button className='btn btn-primary' onClick={editProfile} >EditProfile</button>
+                            {/* </form> */}
                         </div>
 
                     </div>

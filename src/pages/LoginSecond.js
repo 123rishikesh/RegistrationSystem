@@ -45,7 +45,7 @@ const {
                         {/* <p>This field is required</p> */}
                     </div>
                    
-                    <Link to="/ForgetPassword"><div className='pass'>Forget Password?</div></Link>
+                    <Link to="/ForgetPassword"><div className='pass'>Forgot Password?</div></Link>
                     {hasAccount ? (
                         <>
                          <button  className="btn1" onClick={handleLogin}>Login</button>

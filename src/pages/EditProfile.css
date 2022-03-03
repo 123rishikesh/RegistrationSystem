@@ -1,8 +1,19 @@
-/* .root div{
-
-    background: grey;
-} */
-.container-fluid{
-
-    margin-left: 100%;
+.root{
+    position: relative;
+    left: 0px;
+    height: 100vh;
+    width: 100%;
+    margin:0px;
+  background-color: grey;
 }
+.container{
+position: absolute;
+left:100px;
+top: 0px;
+
+}
+
+/* .form-control input{
+
+    width: 10%;
+} */

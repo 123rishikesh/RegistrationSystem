@@ -2,7 +2,8 @@
 import './App.css';
 import app from './fire';
 import React, { useState, useEffect } from 'react';
-import Home from './Component/Header';
+import Header from './Component/Header';
+import ProtectedRoutes from './Routing/ProtectedRoutes';
 import LoginSecond from './pages/LoginSecond';
 import Logout from './pages/Logout';
 import NotFound from './pages/NotFound';
@@ -19,7 +20,7 @@ import ForgetPassword from './pages/ForgetPassword';
 import Footer from './Component/Footer';
 
 function App() {
-  const [state, setState] = useState({ name: " ", phone: " ", email: " ", password: " ", emailError: " ", passwordError: " ", hasAccount: " ", });
+  const [state, setState] = useState({ name: " ", phone: " ", email: " ", password: " ", emailError: " ", passwordError: " ", hasAccount: " "});
   const [user, setUser] = useState("");
   const [email, setEmail] = useState("");
   // const [password, setPassword] = useState("");
@@ -33,7 +34,8 @@ function App() {
 
   const auth = getAuth();
   console.log(auth);
-  const Email = auth.currentUser?.providerData[0].email;
+  // const Email = auth.currentUser?.providerData[0].email;
+
 
 
   const clearInputs = () => {
@@ -69,7 +71,7 @@ function App() {
         }
       });
 
-    navigate('/Logout')
+    // navigate('/Logout')
 
   }
 
@@ -97,7 +99,7 @@ function App() {
     updateProfile(auth.currentUser, {
       displayName: state.name
     }).then((resp) => {
-      console.log(resp + " " + "profile Updated")
+      console.log("profile Updated")
 
     }).catch((error) => {
       console.log(error)
@@ -138,7 +140,7 @@ function App() {
       // ...
     });
   }
-console.log(state.email)
+
   const forgetPassword = () => {
   
 sendPasswordResetEmail(auth,email)
@@ -189,7 +191,9 @@ sendPasswordResetEmail(auth,email)
             state={state}
           />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="/Logout" element={<Logout handleLogout={handleLogout} />} />
+        {/* <Route path="/Logout" element={<Logout handleLogout={handleLogout} />} /> */}
+        <Route path="/Logout" element={<ProtectedRoutes handleLogout={handleLogout}/>} />
+        
         {/* <Route  path="/" element={<LoginSecond
                                 email={email}
                                 setEmail={setEmail}
