@@ -1,5 +1,5 @@
 import React from 'react'
-import './UpdatePassword.css';
+import '../UpdatePassword/UpdatePassword.css';
 
 const UpdateEmail = (props) => {
 

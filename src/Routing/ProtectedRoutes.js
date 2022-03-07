@@ -1,17 +1,17 @@
 import React from 'react'
-import { Navigate } from 'react-router-dom';
+import { Navigate,Outlet } from 'react-router-dom';
 import { getAuth } from 'firebase/auth';
-import Logout from '../pages/Logout';
+import Logout from '../pages/Logout/Logout';
 
-const ProtectedRoutes = ({handleLogout,log}) => {
+const ProtectedRoutes = () => {
 
     const authentication =  getAuth();
     const user = authentication.currentUser?.email;
- 
+
 
     return(
          <>
-            {user  ? <Logout handleLogout={handleLogout}/>: <Navigate to="/"/>}
+            {authentication  ? <Outlet/>: <Navigate to="/"/>}
         </>
        );
     

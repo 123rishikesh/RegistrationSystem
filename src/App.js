@@ -4,20 +4,20 @@ import app from './fire';
 import React, { useState, useEffect } from 'react';
 import Header from './Component/Header';
 import ProtectedRoutes from './Routing/ProtectedRoutes';
-import LoginSecond from './pages/LoginSecond';
-import Logout from './pages/Logout';
-import NotFound from './pages/NotFound';
+import LoginSecond from './pages/Login/LoginSecond'
+import Logout from './pages/Logout/Logout';
+import NotFound from './pages/NotFound/NotFound';
 import { getAuth, updateProfile, updatePhoneNumber, updateEmail, updatePassword, sendPasswordResetEmail } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
-import EditProfile from './pages/EditProfile';
+import EditProfile from './pages/EditProfile/EditProfile';
 import {
   Routes,
   Route
 } from "react-router-dom";
-import UpdateEmail from './pages/UpdateEmail';
-import UpdatePassword from './pages/UpdatePassword';
-import ForgetPassword from './pages/ForgetPassword';
-import Footer from './Component/Footer';
+import UpdateEmail from './pages/UpdateEmail/UpdateEmail';
+import UpdatePassword from './pages/UpdatePassword/UpdatePassword';
+import ForgetPassword from './pages/ForgetPassword/ForgetPassword';
+// import Footer from './Component/Footer';
 
 function App() {
   const [state, setState] = useState({ name: " ", phone: " ", email: " ", password: " ", emailError: " ", passwordError: " ", hasAccount: " "});
@@ -71,7 +71,9 @@ function App() {
         }
       });
 
-    // navigate('/Logout')
+     
+     navigate('/Logout')
+   
 
   }
 
@@ -191,8 +193,10 @@ sendPasswordResetEmail(auth,email)
             state={state}
           />} />
         <Route path="*" element={<NotFound />} />
-        {/* <Route path="/Logout" element={<Logout handleLogout={handleLogout} />} /> */}
-        <Route path="/Logout" element={<ProtectedRoutes handleLogout={handleLogout}/>} />
+     
+        <Route element={<ProtectedRoutes/>} >
+          <Route path="/Logout" element={<Logout  handleLogout={handleLogout}/>} />
+        </Route>
         
         {/* <Route  path="/" element={<LoginSecond
                                 email={email}

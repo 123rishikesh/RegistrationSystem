@@ -2,9 +2,9 @@ import React from 'react'
 import './Logout.css';
 import { Dropdown } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import Layout from '../Component/Layout';
-import Header from '../Component/Header';
-import Footer from '../Component/Footer';
+
+import Header from '../../Component/Header';
+import Footer from '../../Component/Footer';
 
 const Logout = (props) => {
     const { handleLogout } = props;
