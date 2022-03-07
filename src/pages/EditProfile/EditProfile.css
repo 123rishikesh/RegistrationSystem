@@ -1,19 +1,53 @@
-.root{
-    position: relative;
-    left: 0px;
-    height: 100vh;
-    width: 100%;
-    margin:0px;
-  background-color: grey;
-}
+
 .container{
 position: absolute;
 left:100px;
-top: 0px;
-
+margin-top: 0px;
+overflow: hidden;
 }
 
-/* .form-control input{
+.footer{
+ position:absolute;
+ bottom: 0px;
+ right: 0px;
+ left: 0px;
+}
 
-    width: 10%;
-} */
+.header{
+  position:absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.title h3{
+  position: absolute;
+  top: 80px;
+  right: 45%;
+}
+
+.form-group{
+
+  position: absolute;
+  top: 150px;
+  left: 20%;
+}
+
+.backButton{
+  position: absolute;
+  top: 110%;
+  left: 0px;
+}
+
+.updateButton{
+  position: absolute;
+  top: 110%;
+  left: 40%;
+}
+
+.w-50 label{
+ 
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: 20px;
+}
