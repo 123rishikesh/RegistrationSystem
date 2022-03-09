@@ -2,6 +2,9 @@
 import './App.css';
 import app from './fire';
 import React, { useState, useEffect } from 'react';
+import PassengerDetail from './pages/PassengerDetail/PassengerDetail';
+import CreatePassenger from './pages/CreatePassenger/CreatePassenger';
+import DeletePassenger from './pages/DeletePassenger/DeletePassenger';
 import Header from './Component/Header';
 import ProtectedRoutes from './Routing/ProtectedRoutes';
 import LoginSecond from './pages/Login/LoginSecond'
@@ -33,7 +36,7 @@ function App() {
   const navigate = useNavigate();
 
   const auth = getAuth();
-  console.log(auth);
+  // console.log(auth);
   // const Email = auth.currentUser?.providerData[0].email;
 
 
@@ -173,6 +176,7 @@ sendPasswordResetEmail(auth,email)
     })
   }
 
+
   useEffect(() => {
     authListener();
 
@@ -223,6 +227,9 @@ sendPasswordResetEmail(auth,email)
           passwordError={state.passwordError}
         />} />
 
+        <Route path="/PassengerDetail" element={<PassengerDetail />} />
+        <Route path="/DeletePassenger" element={<DeletePassenger />} />
+        <Route path="/CreatePassenger" element={<CreatePassenger />} />
         <Route path="/UpdateEmail" element={<UpdateEmail changeEmail={changeEmail} email={state.email} setState={setState} />} />
         <Route path="/UpdatePassword" element={<UpdatePassword changePassword={changePassword} password={state.password} setState={setState} />} />
         <Route path="/ForgetPassword" element={<ForgetPassword forgetPassword={forgetPassword} email={email} setEmail={setEmail}  />} />

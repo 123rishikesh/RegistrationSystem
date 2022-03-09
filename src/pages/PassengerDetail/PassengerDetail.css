@@ -1,0 +1,62 @@
+/* .maindiv{
+
+    position:relative;
+    right: 40%;
+    margin-top: 2%;
+} */
+
+.firstdiv{
+
+    position:relative;
+    right: 43%;
+    margin-top: 2%;
+}
+
+label{
+    position: relative;
+    right: 35%;
+    font-weight: bold;
+    font-size: large;
+}
+
+.airline{
+
+    position: relative;
+    right: 32%;
+    font-weight: bold;
+    font-size: large;
+}
+
+.seconddiv{
+
+    position: absolute;
+    left: 18%;
+    margin-top: 0px;
+}
+
+.thirddiv{
+    position: absolute;
+    left: 40%;
+}
+
+.country{
+    position: relative;
+    right: 18%;
+    font-weight: bold;
+    font-size: large;
+}
+
+.trip{
+
+ position: relative;
+    right: 12%;
+    font-weight: bold;
+    font-size: large;
+}
+
+.rootdiv{
+    background-color: grey;
+    height: 100%;
+    overflow-y: hidden;
+    
+}

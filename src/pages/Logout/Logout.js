@@ -21,11 +21,19 @@ const Logout = (props) => {
         navigate('/UpdatePassword')
     }
 
-    return (
-        <>
-            <Header/>
-            <h3>Welcome</h3>
+    const handleClick4 = () => {
+        navigate('/PassengerDetail')
+    }
 
+   const  handleClick5 = () => {
+       navigate('/CreatePassenger')
+   }
+
+    return (
+        <div className='main-container'>
+            <Header/>
+         
+            <h3>Welcome to Dashboard</h3>
             <Dropdown className="drp">
                 <Dropdown.Toggle variant="success" id="dropdown-basic">
                     Dropdown Button
@@ -36,12 +44,16 @@ const Logout = (props) => {
                     <Dropdown.Item  onClick={handleClick}>EditProfile</Dropdown.Item>
                     <Dropdown.Item  onClick={handleClick2}>UpdateEmail</Dropdown.Item>
                     <Dropdown.Item  onClick={handleClick3}>UpdatePassword</Dropdown.Item>
+                    <Dropdown.Item  onClick={handleClick4}>PassengerDetail</Dropdown.Item>
+                    <Dropdown.Item  onClick={handleClick5}>CreatePassenger</Dropdown.Item>
                 </Dropdown.Menu>
             </Dropdown>
+          
              <div className='temp'>
+             
           <Footer/>
           </div>
-        </>
+        </div>
     );
 }
 
