@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './PassengerDetail.css';
 import axios from 'axios';
 
 const PassengerDetail = () => {
+
+    const navigate = useNavigate();
 
     const [state, setState] = useState({ person: [] });
 
@@ -19,6 +22,11 @@ const PassengerDetail = () => {
                
             })
     }, []);
+
+    const handleClick = () => {
+
+        navigate('/Logout');
+    }
 
     // const getData = () => {
 
@@ -69,6 +77,7 @@ const PassengerDetail = () => {
 
             </ul>
             {/* <button className='btn btn-primary' onClick={getData}>GetData</button> */}
+            <button className='btn btn-primary' onClick={handleClick}>Back</button>
         </div>
     );
 }

@@ -10,29 +10,39 @@ const Logout = (props) => {
     const { handleLogout } = props;
     const navigate = useNavigate();
 
-    const handleClick = () => {
-        navigate('/EditProfile')
-    }
-    const handleClick2 = () => {
-        navigate('/UpdateEmail')
+    const handleClick = (event) => {
+        const x = event.target.id;
+
+        switch (x) {
+            case 'one':
+                navigate('/EditProfile')
+                break;
+            case 'two':
+                navigate('/UpdateEmail')
+                break;
+            case 'three':
+                navigate('/UpdatePassword')
+                break;
+            case 'four':
+                navigate('/PassengerDetail')
+                break;
+            case 'five':
+                navigate('/CreatePassenger')
+                break;
+            case 'six':
+                navigate('/DeletePassenger')
+                break;
+            default:
+                return false;
+        }
+
     }
 
-    const handleClick3 = () => {
-        navigate('/UpdatePassword')
-    }
-
-    const handleClick4 = () => {
-        navigate('/PassengerDetail')
-    }
-
-   const  handleClick5 = () => {
-       navigate('/CreatePassenger')
-   }
 
     return (
         <div className='main-container'>
-            <Header/>
-         
+            <Header />
+
             <h3>Welcome to Dashboard</h3>
             <Dropdown className="drp">
                 <Dropdown.Toggle variant="success" id="dropdown-basic">
@@ -41,18 +51,19 @@ const Logout = (props) => {
 
                 <Dropdown.Menu>
                     <Dropdown.Item onClick={handleLogout}>Logout</Dropdown.Item>
-                    <Dropdown.Item  onClick={handleClick}>EditProfile</Dropdown.Item>
-                    <Dropdown.Item  onClick={handleClick2}>UpdateEmail</Dropdown.Item>
-                    <Dropdown.Item  onClick={handleClick3}>UpdatePassword</Dropdown.Item>
-                    <Dropdown.Item  onClick={handleClick4}>PassengerDetail</Dropdown.Item>
-                    <Dropdown.Item  onClick={handleClick5}>CreatePassenger</Dropdown.Item>
+                    <Dropdown.Item onClick={handleClick} id='one'>EditProfile</Dropdown.Item>
+                    <Dropdown.Item onClick={handleClick} id='two'>UpdateEmail</Dropdown.Item>
+                    <Dropdown.Item onClick={handleClick} id='three'>UpdatePassword</Dropdown.Item>
+                    <Dropdown.Item onClick={handleClick} id='four'>PassengerDetail</Dropdown.Item>
+                    <Dropdown.Item onClick={handleClick} id='five'>CreatePassenger</Dropdown.Item>
+                    <Dropdown.Item onClick={handleClick} id='six'>DeletePassenger</Dropdown.Item>
                 </Dropdown.Menu>
             </Dropdown>
-          
-             <div className='temp'>
-             
-          <Footer/>
-          </div>
+
+            <div className='temp'>
+
+                <Footer />
+            </div>
         </div>
     );
 }

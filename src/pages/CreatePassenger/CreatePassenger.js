@@ -1,9 +1,12 @@
 import React,{useState} from 'react'
+import './CreatePassenger.css';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const CreatePassenger = () => {
 
     const [state, setState] = useState({name: '', trip: '', airline: '', country: ''});
+    const navigate = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -21,6 +24,10 @@ const CreatePassenger = () => {
             console.log(resp.data)
         })
     }
+
+   const  handleClick = () => {
+    navigate('/Logout');
+   }
 
     return(
         <div className='container'>
@@ -45,6 +52,7 @@ const CreatePassenger = () => {
                     <input type='text' name='country' value={state.country} onChange={(e) => setState({...state, country: e.target.value})}/><br/><br/>
               
                     <button type="submit" className='btn btn-primary'>Add Passenger</button>
+                    <button type="button" className='btn btn-primary' id='back' onClick={handleClick}>Back</button>
             </form>
         
         </div>
