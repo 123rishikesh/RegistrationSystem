@@ -2,9 +2,11 @@
 import './App.css';
 import app from './fire';
 import React, { useState, useEffect } from 'react';
+import UpdatePassengerDetail from './pages/UpdatePassengerDetail/UpdatePassengerDetail';
 import PassengerDetail from './pages/PassengerDetail/PassengerDetail';
 import CreatePassenger from './pages/CreatePassenger/CreatePassenger';
 import DeletePassenger from './pages/DeletePassenger/DeletePassenger';
+import UpdatePassenger from './pages/UpdatePassenger/UpdatePassenger';
 import Header from './Component/Header';
 import ProtectedRoutes from './Routing/ProtectedRoutes';
 import LoginSecond from './pages/Login/LoginSecond'
@@ -228,6 +230,8 @@ sendPasswordResetEmail(auth,email)
         />} />
 
         <Route path="/PassengerDetail" element={<PassengerDetail />} />
+        <Route path="/UpdatePassengerDetail" element={<UpdatePassengerDetail />} />
+        <Route path="/UpdatePassenger" element={<UpdatePassenger />} />
         <Route path="/DeletePassenger" element={<DeletePassenger />} />
         <Route path="/CreatePassenger" element={<CreatePassenger />} />
         <Route path="/UpdateEmail" element={<UpdateEmail changeEmail={changeEmail} email={state.email} setState={setState} />} />

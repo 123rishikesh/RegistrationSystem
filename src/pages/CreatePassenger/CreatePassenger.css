@@ -1,5 +1,57 @@
-#back{
 
+
+#btnadd {
+    position: absolute;
+    left: 800px;
+    width: 150px;
+}
+
+.form{
     position:absolute;
-    left: 30%;
+    top: 10%;
+    left: 40%;
+}
+
+.txtfield1{
+    position:relative;
+    top: 15px;
+    /* left: 50px; */
+}
+
+
+.txtfield2{
+    position:relative;
+    top: 30px;
+    left: 50px;
+}
+
+.txtfield3{
+    position:relative;
+    top: 43px;
+    left: 30px;
+}
+
+.txtfield4{
+    position:relative;
+    top: 35px;
+    left: 35px;
+}
+
+/* .btngroup #btnback{
+
+    position:relative;
+    right: 20%;
+} */
+
+#btnback1{
+
+    position: absolute;
+    left: 500px;
+    width: 80px;
+}
+
+.container h3{
+    position:absolute;
+    top: 80px;
+    right: 300px;
 }

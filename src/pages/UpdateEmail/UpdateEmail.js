@@ -1,5 +1,5 @@
 import React from 'react'
-import '../UpdatePassword/UpdatePassword.css';
+import './UpdateEmail.css';
 import {useNavigate } from 'react-router-dom';
 import Header from '../../Component/Header';
 import Footer from '../../Component/Footer';

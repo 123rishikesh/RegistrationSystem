@@ -32,6 +32,12 @@ const Logout = (props) => {
             case 'six':
                 navigate('/DeletePassenger')
                 break;
+                case 'seven':
+                    navigate('/UpdatePassenger')
+                    break; 
+                case 'eight':
+                        navigate('/UpdatePassengerDetail')
+                        break;        
             default:
                 return false;
         }
@@ -57,6 +63,8 @@ const Logout = (props) => {
                     <Dropdown.Item onClick={handleClick} id='four'>PassengerDetail</Dropdown.Item>
                     <Dropdown.Item onClick={handleClick} id='five'>CreatePassenger</Dropdown.Item>
                     <Dropdown.Item onClick={handleClick} id='six'>DeletePassenger</Dropdown.Item>
+                    <Dropdown.Item onClick={handleClick} id='seven'>UpdatePassenger</Dropdown.Item>
+                    <Dropdown.Item onClick={handleClick} id='eight'>UpdatePassengerDetail</Dropdown.Item>
                 </Dropdown.Menu>
             </Dropdown>
 

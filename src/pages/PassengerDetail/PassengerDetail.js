@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './PassengerDetail.css';
 import axios from 'axios';
+import Footer from '../../Component/Footer'
+import Header from '../../Component/Header'
 
 const PassengerDetail = () => {
 
@@ -43,6 +45,8 @@ const PassengerDetail = () => {
     // }
 
     return (
+        <div className='containerdiv'>
+               <Header/>
         <div className='rootdiv'>
             <ul>
                 <label className='passenger'>Passenger Name</label>
@@ -78,6 +82,11 @@ const PassengerDetail = () => {
             </ul>
             {/* <button className='btn btn-primary' onClick={getData}>GetData</button> */}
             <button className='btn btn-primary' onClick={handleClick}>Back</button>
+         
+        </div>
+        <div className='footer'>
+        {/* <Footer/> */}
+        </div>
         </div>
     );
 }

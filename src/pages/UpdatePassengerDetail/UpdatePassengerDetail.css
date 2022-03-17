@@ -1,0 +1,36 @@
+.frm {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+}
+
+.txtField2{
+    position: relative;
+    left: 13%;
+}
+
+.txtField3{
+    position: relative;
+    left: 8%;
+}
+
+.btngroup{
+
+    position: absolute;
+    top: 200px;
+    right: 100px;
+}
+
+div #buttonupdate{
+
+    position: absolute;
+    left: 80px;
+    width: 25vh;
+}
+
+div #buttonback{
+
+    position: absolute;
+    right: 40px;
+}
+

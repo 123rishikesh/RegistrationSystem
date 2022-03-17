@@ -1,0 +1,52 @@
+#btnback{
+    position: absolute;
+    left: 550px;
+}
+
+#btnupdate {
+
+    position: absolute;
+    left: 700px;
+}
+
+.txtform{
+
+    position: absolute;
+    top: 150px;
+    left: 400px
+}
+
+.seconddiv input{
+    position:absolute;
+    top: 20px;
+    left: 70px;
+}
+
+.seconddiv label{
+    position: absolute;
+    top: 20px;
+    right: 55px;
+
+}
+
+div #btnupdate,#btnback{
+    position:absolute;
+    top: 150px;
+   
+}
+
+div #btnupdate{
+    position: relative;
+    left: 10px;
+
+}
+
+div #btnback{
+    position: relative;
+    left: 80px;
+}
+
+div h3{
+    position: absolute;
+    top: 80px;
+}

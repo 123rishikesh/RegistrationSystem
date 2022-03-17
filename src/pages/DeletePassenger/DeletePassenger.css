@@ -1,3 +1,34 @@
 #back{
     position: absolute;
 }
+
+.main-container1{
+    background-color: pink;
+}
+
+.form{
+   position:absolute;
+   top: 150px;
+}
+
+#deletebtn {
+    position:absolute;
+    left:250px;
+}
+
+#backbutton{
+
+    position:absolute;
+    left: 90px;
+}
+
+div input{
+    margin-left: 40px;
+
+}
+
+.main-container1 h3{
+    position:absolute;
+    top: 60px;
+    right: 460px;
+}
