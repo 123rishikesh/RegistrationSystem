@@ -5,15 +5,18 @@ import './UpdatePassengerDetail.css'
 import Header from '../../Component/Header';
 import Footer from '../../Component/Footer';
 
-const UpdatePassengerDetail = () => {
+const UpdatePassengerDetail = (props) => {
     let navigate = useNavigate();
 
-    const [state, setState] = useState({name: '', trips: '', airline: ''});
+    const {passengerId} = props;
+    console.log(passengerId)
+
+    const [state, setState] = useState({name: '', trips: '', id: '', _id:''});
 
     const user = {
         name: state.name,
         trips: state.trips,
-        airline: state.airline,
+        airline: state.id,
       
     }
 
@@ -26,7 +29,7 @@ const UpdatePassengerDetail = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        axios.put('https://api.instantwebtools.net/v1/passenger/1', user)
+        axios.put(`https://api.instantwebtools.net/v1/passenger/${state._id}`, user)
         .then((resp) => {
 
             console.log(resp)
@@ -48,7 +51,11 @@ const UpdatePassengerDetail = () => {
                     </div><br/>
                     <div className='txtField3'>
                     <label>AirlineID</label>
-                    <input type='text' name='airline'    value={state.airline}   onChange={(e) => setState({...state, airline: e.target.value})}/>
+                    <input type='text' name='id'    value={state.id}   onChange={(e) => setState({...state, id: e.target.value})}/>
+                    </div>
+                    <div className='txtField4'>
+                    <label>passengerID</label>
+                    <input type='text' name='_id'    value={state._id}   onChange={(e) => setState({...state, _id: e.target.value})}/>
                     </div>
                     <div className='btngroup'>
                     <button className='btn btn-primary' id="buttonupdate">Update Passenger</button>

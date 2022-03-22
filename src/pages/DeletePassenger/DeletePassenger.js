@@ -14,7 +14,7 @@ const DeletePassenger = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        axios.delete('https://api.instantwebtools.net/v1/passenger/1', state._id)
+        axios.delete(`https://jsonplaceholder.typicode.com/posts/${state.id}`)
         .then( resp => {
             console.log(resp)
             console.log(resp.data)
@@ -33,7 +33,7 @@ const DeletePassenger = () => {
             <form onSubmit={handleSubmit} className='form'>
                 <div>
                 <lable>PassengerID</lable>
-                <input type='text' name='_id'  value={state._id} onChange={(e) => setState({name: e.target.value})}/><br/><br/>
+                <input type='text' name='id'  value={state.id} onChange={(e) => setState({name: e.target.value})}/><br/><br/>
                 </div>
                 <button type='submit' id='deletebtn'>Delete</button>
                 <button type='button' onClick={handleClick} id='backbutton'>Back</button>

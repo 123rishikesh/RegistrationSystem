@@ -2,7 +2,7 @@
 
 #btnadd {
     position: absolute;
-    left: 800px;
+    left: 80px;
     width: 150px;
 }
 
@@ -46,7 +46,7 @@
 #btnback1{
 
     position: absolute;
-    left: 500px;
+    right: 10px;
     width: 80px;
 }
 

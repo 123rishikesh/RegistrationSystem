@@ -14,6 +14,18 @@
     left: 8%;
 }
 
+.txtField4 input{
+    position: absolute;
+    top: 90%;
+    left: 35%;
+}
+
+.txtField4 label{
+    position:relative;
+    margin-top: 5%;
+    right: 60%;
+}
+
 .btngroup{
 
     position: absolute;

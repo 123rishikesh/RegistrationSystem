@@ -4,6 +4,7 @@ import './PassengerDetail.css';
 import axios from 'axios';
 import Footer from '../../Component/Footer'
 import Header from '../../Component/Header'
+import UpdatePassengerDetail from '../UpdatePassengerDetail/UpdatePassengerDetail';
 
 const PassengerDetail = () => {
 
@@ -44,6 +45,10 @@ const PassengerDetail = () => {
     //     })
     // }
 
+    const onUpdate = () => {
+        navigate('/UpdatePassengerDetail');
+    }
+
     return (
         <div className='containerdiv'>
                <Header/>
@@ -60,7 +65,7 @@ const PassengerDetail = () => {
                             <div className='maindiv'>
 
                                     <div className='firstdiv'>
-                                <li style={{ listStyle: 'none' }} key={persons.id}>{persons.name}</li>
+                                <li style={{ listStyle: 'none' }} key={persons._id}>{persons.name}</li>
                                     </div>
                                 <div className='seconddiv'>
                                     <li style={{ listStyle: 'none' }} key={persons.airline[0].id}>{persons.airline[0].name}</li>
@@ -69,9 +74,14 @@ const PassengerDetail = () => {
                                     <li style={{ listStyle: 'none' }} key={persons.airline[0].id}>{persons.airline[0].country}</li>
                                 </div>
                                 <div className='fourthdiv'>
-                                    <li style={{ listStyle: 'none' }} key={persons.id}>{persons.trips}</li>
+                                    <li style={{ listStyle: 'none' }} key={persons._id}>{persons.trips}</li>
                                 </div>
-                               
+                                <div className='buttonupdate'>
+                               <button onClick={onUpdate}>Update</button>
+                               </div>
+                               <div style={{display: 'none'}}>
+                               <UpdatePassengerDetail passengerId={persons._id}/>
+                               </div>
                             </div>
 
                       
