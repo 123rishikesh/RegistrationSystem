@@ -7,6 +7,7 @@ import Footer from '../../Component/Footer';
 
 const UpdatePassengerDetail = (props) => {
     let navigate = useNavigate();
+    console.log(props);
 
     const {passengerId} = props;
     console.log(passengerId)

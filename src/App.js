@@ -190,7 +190,12 @@ sendPasswordResetEmail(auth,email)
     <div className="App">
     
       <Routes>
-        <Route path="/EditProfile" element={
+       
+        <Route path="*" element={<NotFound />} />
+     
+        <Route element={<ProtectedRoutes/>} >
+          <Route path="/Logout" element={<Logout  handleLogout={handleLogout}/>} />
+          <Route path="/EditProfile" element={
           <EditProfile
             editProfile={editProfile}
             name={state.name}
@@ -198,10 +203,15 @@ sendPasswordResetEmail(auth,email)
             phone={state.phone}
             state={state}
           />} />
-        <Route path="*" element={<NotFound />} />
-     
-        <Route element={<ProtectedRoutes/>} >
-          <Route path="/Logout" element={<Logout  handleLogout={handleLogout}/>} />
+
+        <Route path="/PassengerDetail" element={<PassengerDetail />} />
+        <Route path="/UpdatePassengerDetail" element={<UpdatePassengerDetail />} />
+        <Route path="/UpdatePassenger" element={<UpdatePassenger />} />
+        <Route path="/DeletePassenger" element={<DeletePassenger />} />
+        <Route path="/CreatePassenger" element={<CreatePassenger />} />
+        <Route path="/UpdateEmail" element={<UpdateEmail changeEmail={changeEmail} email={state.email} setState={setState} />} />
+        <Route path="/UpdatePassword" element={<UpdatePassword changePassword={changePassword} password={state.password} setState={setState} />} />
+        <Route path="/ForgetPassword" element={<ForgetPassword forgetPassword={forgetPassword} email={email} setEmail={setEmail}  />} />
         </Route>
         
         {/* <Route  path="/" element={<LoginSecond
@@ -229,14 +239,7 @@ sendPasswordResetEmail(auth,email)
           passwordError={state.passwordError}
         />} />
 
-        <Route path="/PassengerDetail" element={<PassengerDetail />} />
-        <Route path="/UpdatePassengerDetail" element={<UpdatePassengerDetail />} />
-        <Route path="/UpdatePassenger" element={<UpdatePassenger />} />
-        <Route path="/DeletePassenger" element={<DeletePassenger />} />
-        <Route path="/CreatePassenger" element={<CreatePassenger />} />
-        <Route path="/UpdateEmail" element={<UpdateEmail changeEmail={changeEmail} email={state.email} setState={setState} />} />
-        <Route path="/UpdatePassword" element={<UpdatePassword changePassword={changePassword} password={state.password} setState={setState} />} />
-        <Route path="/ForgetPassword" element={<ForgetPassword forgetPassword={forgetPassword} email={email} setEmail={setEmail}  />} />
+       
       </Routes>
         
     </div>

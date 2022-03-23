@@ -58,7 +58,7 @@ const UpdatePassenger = () => {
                     {/* <label>Trips</label><br/>
                     <input type='number' name='trips' value={state.trips} onChange={(e) => setState({...state, trips: e.target.value})}/><br/> */}
                     <div className='seconddiv'>
-                    <label>AirlineID</label>
+                    <label>PassengerID</label>
                     <input type='text' name='_id'    value={state._id}   onChange={(e) => setState({...state, _id: e.target.value})}/>
                     </div>
                     <div className='buttongroup'>
