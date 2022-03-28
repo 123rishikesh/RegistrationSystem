@@ -25,10 +25,12 @@ import ForgetPassword from './pages/ForgetPassword/ForgetPassword';
 // import Footer from './Component/Footer';
 
 function App() {
-  const [state, setState] = useState({ name: " ", phone: " ", email: " ", password: " ", emailError: " ", passwordError: " ", hasAccount: " "});
+ 
+  const [state, setState] = useState({ name: " ", phone: " ", email: " ", password: " ", emailError: " ", passwordError: " ", hasAccount: " ", flag: false });
   const [user, setUser] = useState("");
   const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
+  const [password, setPassword] = useState("");
+  console.log(password,email)
   // const [emailError, setEmailError] = useState("");
   // const [passwordError, setPasswordError] = useState("");
   // const [hasAccount, setHasAccount] = useState(false);
@@ -41,7 +43,7 @@ function App() {
   // console.log(auth);
   // const Email = auth.currentUser?.providerData[0].email;
 
-
+ 
 
   const clearInputs = () => {
     // setEmail("");
@@ -59,10 +61,10 @@ function App() {
 
   const handleLogin = () => {
     clearErrors();
-    
+if(email && password){
     app
       .auth()
-      .signInWithEmailAndPassword(email, state.password)
+      .signInWithEmailAndPassword(email, password)
       .catch(err => {
         switch (err.code) {
           case "auth/invalid-email":
@@ -76,14 +78,18 @@ function App() {
         }
       });
 
-     
-     navigate('/Logout')
+
+    navigate('/Logout')
+    } else{
+      setState({flag: true})
    
+    }
 
   }
 
   const handleSignup = () => {
     clearErrors();
+    if(email && password){
     app
       .auth()
       .createUserWithEmailAndPassword(state.email, state.password)
@@ -100,6 +106,9 @@ function App() {
             break;
         }
       });
+    } else{
+      setState({flag:true})
+    }
   }
 
   const editProfile = () => {
@@ -149,17 +158,17 @@ function App() {
   }
 
   const forgetPassword = () => {
-  
-sendPasswordResetEmail(auth,email)
-  .then(() => {
-    console.log("Password reset email sent!")
-   
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    console.log(errorMessage,errorCode)
-  });
+
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        console.log("Password reset email sent!")
+
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorMessage, errorCode)
+      });
   }
 
   const handleLogout = () => {
@@ -188,32 +197,32 @@ sendPasswordResetEmail(auth,email)
   return (
 
     <div className="App">
-    
-      <Routes>
-       
-        <Route path="*" element={<NotFound />} />
-     
-        <Route element={<ProtectedRoutes/>} >
-          <Route path="/Logout" element={<Logout  handleLogout={handleLogout}/>} />
-          <Route path="/EditProfile" element={
-          <EditProfile
-            editProfile={editProfile}
-            name={state.name}
-            setState={setState}
-            phone={state.phone}
-            state={state}
-          />} />
 
-        <Route path="/PassengerDetail" element={<PassengerDetail />} />
-        <Route path="/UpdatePassengerDetail" element={<UpdatePassengerDetail />} />
-        <Route path="/UpdatePassenger" element={<UpdatePassenger />} />
-        <Route path="/DeletePassenger" element={<DeletePassenger />} />
-        <Route path="/CreatePassenger" element={<CreatePassenger />} />
-        <Route path="/UpdateEmail" element={<UpdateEmail changeEmail={changeEmail} email={state.email} setState={setState} />} />
-        <Route path="/UpdatePassword" element={<UpdatePassword changePassword={changePassword} password={state.password} setState={setState} />} />
-        <Route path="/ForgetPassword" element={<ForgetPassword forgetPassword={forgetPassword} email={email} setEmail={setEmail}  />} />
+      <Routes>
+
+        <Route path="*" element={<NotFound />} />
+
+        <Route element={<ProtectedRoutes />} >
+          <Route path="/Logout" element={<Logout handleLogout={handleLogout} />} />
+          <Route path="/EditProfile" element={
+            <EditProfile
+              editProfile={editProfile}
+              name={state.name}
+              setState={setState}
+              phone={state.phone}
+              state={state}
+            />} />
+
+          <Route path="/PassengerDetail" element={<PassengerDetail />} />
+          <Route path="/UpdatePassengerDetail" element={<UpdatePassengerDetail />} />
+          <Route path="/UpdatePassenger" element={<UpdatePassenger />} />
+          <Route path="/DeletePassenger" element={<DeletePassenger />} />
+          <Route path="/CreatePassenger" element={<CreatePassenger />} />
+          <Route path="/UpdateEmail" element={<UpdateEmail changeEmail={changeEmail} email={state.email} setState={setState} />} />
+          <Route path="/UpdatePassword" element={<UpdatePassword changePassword={changePassword} password={state.password} setState={setState} />} />
+          <Route path="/ForgetPassword" element={<ForgetPassword forgetPassword={forgetPassword} email={email} setEmail={setEmail} />} />
         </Route>
-        
+
         {/* <Route  path="/" element={<LoginSecond
                                 email={email}
                                 setEmail={setEmail}
@@ -228,20 +237,23 @@ sendPasswordResetEmail(auth,email)
                               />}/> */}
         <Route path="/" element={<LoginSecond
           email={email}
+          password={password}
+          setPassword={setPassword}
           setEmail={setEmail}
           setState={setState}
-          password={state.password}
+          // password={state.password}
           handleLogin={handleLogin}
           handleSignup={handleSignup}
           hasAccount={state.hasAccount}
           state={state}
           emailError={state.emailError}
           passwordError={state.passwordError}
+          flag={state.flag}
         />} />
 
-       
+
       </Routes>
-        
+
     </div>
   );
 }

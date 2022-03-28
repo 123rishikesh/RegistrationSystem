@@ -11,12 +11,14 @@ const {
     email,
     setEmail,
     password,
+    setPassword,
     setState,
     handleLogin,
     handleSignup,
     hasAccount,
     emailError,
    passwordError,
+   flag,
    state,
 } = props;
     return (
@@ -29,6 +31,7 @@ const {
                 <div className="form" >
                     <div className='txt_field'>
                         <input type="text" value={email} onChange={(e)=> setEmail(e.target.value)} required/>
+                        {flag && <p className='flag'>Email is Required</p>}
                         {/* <input type="text"  value={email} onChange={(e)=> setState({...state, email: e.target.value})} required/> */}
                             <span></span>
                         <label>UserName</label>
@@ -37,7 +40,8 @@ const {
                     </div>
                     <div className='txt_field'>
                         {/* <input type="password" value={password} onChange={(e)=> setPassword(e.target.value)} required/> */}
-                        <input type="password"  value={password} onChange={(e)=> setState({...state, password:e.target.value})} required/>
+                        <input type="password"  value={password} onChange={(e)=> setPassword(e.target.value)} required/>
+                        {flag && <p className='flag'>password is Required</p>}
                             <span></span>
                         <label>Password</label>
                       

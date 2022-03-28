@@ -39,7 +39,7 @@
 }
 
 .txt_field input{
-    width: 100%;
+    width: 200%;
     height: 20px;
     padding: 0 5px;
     font-size: 16px;
@@ -140,4 +140,8 @@ h1{
 .form{
     position: absolute;
     top: 90px;
+}
+
+.flag {
+    color: red;
 }
